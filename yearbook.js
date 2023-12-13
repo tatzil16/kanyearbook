@@ -25,7 +25,7 @@ app.get("/", (req, res) => {
  });
 
 app.get("/entry", (req, res) => {
-    const variables = {formHeader: `<form method='post' action='http://localhost:${portNumber}/processEntry'>`}
+    const variables = {formHeader: `<form method='post' action='https://kanyearbook.onrender.com/processEntry'>`}
     res.render("entryPage", variables);
  });
 
