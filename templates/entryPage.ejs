@@ -1,0 +1,52 @@
+<!-- DO NOT MODIFY THIS FILE -->
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<title>Application Page</title>
+	<style>
+		html {
+			font-size: 14px;
+			background-image: url("bees.jpeg");
+			color: darkmagenta;
+			background-repeat: no-repeat;
+  			background-size: cover;
+			text-align: center;
+		}
+	</style>
+</head>
+
+<body>
+	<h1>Application</h1>
+	<%- formHeader %>
+		<div style="border:1px solid black;padding-left: 1rem;padding-bottom: 1rem;padding-right: 1rem; line-height: 2em;"><strong>
+			Name: <input type="text" name="name" required> Major: <input type="text" name="major" required><br>
+			Quote: <br>
+			<input type="radio" id="yesQuote" name="quoteButton" value="yesQuote" required>
+			<label for="yesQuote">Make my own quote</label><br>
+			<input type="radio" id="kanyeQuote" name="quoteButton" value="kanyeQuote">
+			<label for="kanyeQuote">Generate a quote for me</label><br>
+			<div id="customQuoteContainer" style="display: none;">
+				Quote: <br><input type="text" name="quote" style="height: 60px; width: 700px;">
+			</div>
+		</strong></div>
+		<br>
+		
+		<input type="reset" value="Reset"> <input type="submit" value="Submit Application" 
+		onclick="return confirm('Are you sure you want to submit your application?\nYou will not be able to change your information once submitted.')"><br><hr>
+	</form>
+	<a href="/">HOME</a>
+	<script>
+		// Add event listener to the radio buttons
+		document.getElementById('kanyeQuote').addEventListener('change', function() {
+		  document.getElementById('customQuoteContainer').style.display = 'none';
+		});
+	
+		document.getElementById('yesQuote').addEventListener('change', function() {
+		  document.getElementById('customQuoteContainer').style.display = 'block';
+		});
+	</script>
+</body>
+
+</html>
